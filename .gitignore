@@ -41,6 +41,8 @@ typings/
 
 # Optional npm cache directory
 .npm
+.cache
+.tern-port
 
 # Optional eslint cache
 .eslintcache
@@ -59,3 +61,7 @@ typings/
 
 # next.js build output
 .next
+
+# Built files
+dist/
+es/
