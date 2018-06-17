@@ -4,7 +4,7 @@
       "presets": [
         ["env", { modules: false }], 
       ],
-      "plugins": ["external-helpers"],
+      "plugins": ["external-helpers"]
     },
     "test": {
       "presets": ["env"]
