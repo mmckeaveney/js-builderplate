@@ -1,0 +1,46 @@
+{
+  "name": "typescript-library",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "Martin McKeaveney",
+  "scripts": {
+    "clean": "rimraf dist es",
+    "build": "NODE_ENV=production rollup -c rollup.config.js",
+    "start": "NODE_ENV=development parcel dev/index.html",
+    "test": "jest spec -b --colors",
+    "test:watch": "jest spec -b --colors --watch",
+    "prepublish:compile": "npm run test && npm run clean && npm run build",
+    "prepublishOnly": "npm run prepublish:compile",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "contributors:check": "all-contributors check"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "jest": "^23.4.2",
+    "rollup": "^0.60.7",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.16.1",
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "ts-jest": "^23.1.3",
+    "typescript": "^3.0.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/spec/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testURL": "http://localhost/",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "moduleDirectories": ["node_modules", "src"]
+  }
+}
